@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실습(요금표)</title>
+<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@700&display=swap" rel="stylesheet">
+<style>
+	table{
+		margin:0 auto;
+		text-align:center;
+		width:30%;
+		font-family:Gaegu;
+	}
+	
+	thead{
+		background:#fffde7;
+	}
+</style>
+</head>
+<body>
+	<table border="1">
+		<caption>요금표</caption>
+		<thead>
+			<tr>
+				<th>구분</th>
+				<th>요금</th>
+			</tr>
+		</thead>
+		<tr>
+			<td class="text">아동</td>
+			<td>무료</td>
+		</tr>
+		<tr>
+			<td class="text">청소년</td>
+			<td>2000원</td>
+		</tr>
+		<tr>
+			<td class="text">성인</td>
+			<td>5000원</td>
+		</tr>
+	</table>
+	<fieldset style="text-align:center; width:30%; margin:0 auto;">
+		<legend>구분</legend>
+		<input type="text" id="choice">
+		<button onclick="confirm()">확인</button>
+	</fieldset>
+</body>
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+	//변경된 DOM객체와 텍스트값을 저장할 전역변수
+	var tempTr;
+	var tempTd;
+	var tempText;
+
+	function confirm(){
+		//input 태그에 있는 사용자가 작성한 문자열 값 가져오기
+		var input = $("#choice").val();
+		
+		//사용자가 입력한 값이 정상인지 아닌지를 표시할 수 있는 FLAG
+		var check = false;
+		
+		if(tempTd != undefined){
+			//들어와서 원래대로 복구해준다.
+			tempTr.css("background",'#fff');
+			tempTd.text(tempText);
+		}
+		
+		//item은 자바 스크립트이기 때문에 innerHTML을 써야하며 jQeury문법을 사용하기 위해서는 $(this)해줘야 한다
+		$.each($(".text"), function(index, item) {
+			if(item.innerHTML == input){
+				tempTr = $(this).parent();
+				tempTd = $(this);
+				tempText = item.innerHTML;
+								
+				$(this).text("★"+item.innerHTML);
+				$(this).parent().css("background","#f06292");
+				
+				check = true;
+			}
+		})
+		
+		if(!check){
+			//히스토리는 배열처럼 저장되고 0번째(첫 화면)로 이동시키면
+			//초기화면이 나온다.
+			history.go(0);
+			alert("다시 시도해주세요.");
+		}
+	}
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

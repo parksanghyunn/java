@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<textarea class="a" rows="2" cols="40">textarea</textarea>
+	<textarea class="a" rows="2" cols="40">textarea</textarea>
+	<textarea class="a" rows="2" cols="40">textarea</textarea>
+	<textarea class="a" rows="2" cols="40">textarea</textarea>
+	<div class="a">div</div>
+	<p class="a">p</p>
+	<strong class="a">strong</strong>
+	<input class="a" value="input">
+	<button class="a">button</button>
+	<input type="radio" class="a" value="input" checked="checked">
+	<input type="radio" class="a" value="input">
+</body>
+
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+	/* 
+		jQuery에서 val()는 input태그에 작성된 문자열 값을 가져오는 목적으로만 사용한다! 
+		jQuery에서 text()는 input태그 이외의 문자열 값을 가져오는 목적으로 사용한다!
+		
+		javascript에서 value는 input태그에 작성된 문자열 값을 가져오는 목적으로만 사용한다!
+		javascript에서 innerHTML은 input태그 이외의 문자열 값을 가져오는 목적으로 사용한다!
+	*/
+
+	console.log("=========jQuery val()=======");
+	$.each($(".a"), function(index, item){
+		console.log($(item).val());
+	});
+	console.log("============================");
+
+	console.log("=========jQuery text()=======");
+	$.each($(".a"), function(index, item){
+		console.log($(item).text());
+	});
+	console.log("============================");
+	
+	console.log("=========javascript innerHTML=======");
+	$.each($(".a"), function(index, item){
+		console.log(item.innerHTML);
+	});
+	console.log("============================");
+	
+	console.log("=========javascript value=======");
+	$.each($(".a"), function(index, item){
+		console.log(item.value);
+	});
+	console.log("============================");
+	
+</script>
+</html>

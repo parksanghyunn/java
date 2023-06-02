@@ -1,0 +1,57 @@
+{
+	"folders": {},
+	"connections": {
+		"oracle_thin-1750144cd39-58d3d0f43dfb8ac6": {
+			"provider": "oracle",
+			"driver": "oracle_thin",
+			"name": "XE",
+			"save-password": true,
+			"show-system-objects": true,
+			"read-only": false,
+			"virtual-model-id": "oracle_thin-1749f95aa0f-434856f25403d30",
+			"configuration": {
+				"host": "localhost",
+				"port": "1521",
+				"database": "XE",
+				"url": "jdbc:oracle:thin:@//localhost:1521/XE",
+				"home": "C:\\oraclexe\\app\\oracle\\product\\11.2.0\\server",
+				"type": "dev",
+				"provider-properties": {
+					"@dbeaver-connection-type@": "BASIC",
+					"@dbeaver-sid-service@": "SERVICE",
+					"@dbeaver-check-schema-content@": "false",
+					"@dbeaver-always-show-dba@": "false",
+					"@dbeaver-always-use-dba-views@": "false",
+					"@dbeaver-meta-use-sys-schema@": "false",
+					"@dbeaver-meta-use-simple-constraints@": "false",
+					"@dbeaver-use-rule-hint@": "false",
+					"@dbeaver-use-meta-optimizer@": "false"
+				},
+				"auth-model": "oracle_native"
+			}
+		}
+	},
+	"virtual-models": {
+		"oracle_thin-1749f95aa0f-434856f25403d30": {
+			"HR": {
+				":HOBBY": {
+					"properties": {
+						"erd.diagram.state": {
+							"serialized": "<diagram version=\"1\" name=\"HOBBY\" time=\"202009231318\"><entities><data-source id=\"oracle_thin-1749f95aa0f-434856f25403d30\"><entity id=\"1\" name=\"HOBBY\" fq-name=\"HR.HOBBY\" order=\"0\" color-bg=\"255,128,64\" x=\"382\" y=\"267\"><path name=\"HR\"/></entity><entity id=\"2\" name=\"MEMBER_TASK\" fq-name=\"HR.MEMBER_TASK\" order=\"1\" x=\"616\" y=\"256\"><path name=\"HR\"/></entity></data-source></entities><relations><relation name=\"FK_ID\" fq-name=\"HR.HOBBY.FK_ID\" type=\"fk\" pk-ref=\"2\" fk-ref=\"1\"/></relations></diagram>"
+						}
+					}
+				}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false
+		}
+	}
+}

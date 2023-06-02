@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form name = "myForm">
+		<p>
+			<label>네이버<input type = "radio" value ="naver" name="site"></label>
+		</p>
+		<p>
+			<label>다음<input type = "radio" value ="daum" name="site"></label>
+		</p>
+		<p>
+			<label>구글<input type = "radio" value ="google" name="site"></label>
+		</p>
+		<p>
+			<input type = "button" onclick="sendit()" value="이동">
+		</p>
+	</form>
+</body>
+<script>
+	function sendit() {
+		//html에 있는 form태그 가져오기
+		var frm = document.myForm;
+		
+		if(frm.site.value == "naver"){
+			location.href = "http://www.naver.com";
+		}else if(frm.site.value == "daum"){
+			location.href = "http://www.daum.net";
+		}else if(frm.site.value == "google"){
+			location.href = "http://www.google.com";
+		}
+	}
+	
+</script>
+</html>

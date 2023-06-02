@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Member">
+	<!-- 아이디가 있는지 없는지 체크하여 있으면 1을 없으면 0을 반환한다.. -->
+	<select id="check" parameterType = "string" resultType="_int">
+		SELECT COUNT(*) FROM MEMBER_TASK WHERE EMAIL = #{email}
+	</select>
+	
+	<!-- 아이디,비밀번호,이름을 MEMBER_TASK테이블에 추가 시킨다. -->
+	<insert id="join" parameterType="map">
+		INSERT INTO MEMBER_TASK VALUES(#{email}, #{pw},#{name})
+	</insert>
+	
+	<!-- 취미 테이블에 사용자가 선택한 취미를 추가 시킨다. -->
+	<insert id="hobby" parameterType="map">
+		INSERT INTO HOBBY VALUES(#{email},#{hobby})
+	</insert>
+
+	<!-- 로그인시 이메일과 비밀번호가 일치하는지 확인하고 일치할시 1을 일치하지 않을 시 0을 반환한다. -->
+	<select id="login" parameterType="map" resultType="_int">
+		SELECT COUNT(*) FROM MEMBER_TASK WHERE EMAIL = #{email} AND PW = #{pw}
+	</select>
+	
+	<!-- 비밀번호 찾기시 이메일이 있는지 판단하여 있으면 1을 없으면 0을 반환한다. -->
+	<select id="find" parameterType="string" resultType="_int">
+		SELECT COUNT(*) FROM MEMBER_TASK WHERE EMAIL = #{email}
+	</select>
+	
+	<!-- 이메일을 확인하고 비밀번호를 임시비밀번호로 변경한다. -->
+	<update id="findCh" parameterType="map">
+		UPDATE MEMBER_TASK SET PW = #{pw} WHERE EMAIL = #{email}
+	</update>
+	
+</mapper>

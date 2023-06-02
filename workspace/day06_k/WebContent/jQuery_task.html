@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>숫자를 한글로 변경하기</title>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&display=swap" rel="stylesheet">
+<link href="function_task.css" rel="stylesheet">
+
+<style>
+	#round{
+		margin-left:150px;
+		border:5px solid #ab47bc;
+		border-radius:50%;
+		width:50px;
+		height:50px;
+		background:#ffee58;
+		line-height:50px;
+		text-align:center;
+		font-family:Black Han Sans;
+		font-size:1.5rem;
+	}
+</style>
+
+</head>
+<body>
+	<div id="round">1</div>
+	<fieldset>
+		<legend>숫자를 한글로 변경</legend>
+		<textarea id="result" rows="3" cols="40">결과 표시 부분</textarea>
+		<input type="text" id="num"><br>
+		<button onclick="getResult()">변경</button>
+	</fieldset>
+</body>
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+/*
+	var data = "1024";
+	var hangle = "공일이삼사오육칠팔구";
+	for(let i in data){
+		console.log(data.charAt(i));
+	}
+*/
+	$(document).ready(function(){
+		$("#num").keydown(function(key){
+			if(key.keyCode == 13){
+				getResult();
+			}
+		})
+	});
+
+	function changeToHangle(number){
+		if(!isNaN(number)){
+			var data = number + "";
+			var hangle = "공일이삼사오육칠팔구";
+			var result = "";
+			
+			//i는 data의 길이만큼 0부터 1씩 증가
+			for(let i in data){
+				//전달받은 값에 0부터 하나씩 접근해서 hangle에 접근
+				result += hangle[data.charAt(i)];
+			}
+			return result;	//undefined, "", 한글
+		}
+	}
+	
+	function getResult(){
+		var input = $("#num").val();
+		var result = changeToHangle(input);
+		var textAreaTag = $("#result");
+		var divTag = $("#round");
+		
+		if(result == undefined || result == ""){
+			textAreaTag.text("숫자만 입력하세요.");
+			divTag.text("4");
+		}else{
+			//숫자 혹은 마침표를 포함한 값을 입력했을 때 들어오는 영역(정상일 때)
+			
+			//변경 전 result값
+			var temp = result;
+			
+			//마침표가 있다면 undefined로 표시되고, 이를 "점"으로 변경해준다.
+			result = result.replace(undefined, "점");
+			
+			//변경이 되었을 때(.이 있을 때)
+			if(temp != result){
+				divTag.text("2");
+			}else{
+				//변경사항이 없을 때(정수만 입력했을 때)
+				divTag.text("3");
+			}
+			//결과를 textarea에 표시한다.
+			textAreaTag.text(result);
+		}
+	}
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

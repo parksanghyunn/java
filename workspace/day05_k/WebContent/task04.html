@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자동차 주행 테스트</title>
+<!-- 외부 css파일 불러오기 -->
+<link rel="stylesheet" type="text/css" href="object_task.css">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+<style>
+	#pwCheck{
+		visibility: hidden;
+	}
+</style>
+</head>
+<body>
+	<fieldset>
+		<legend>자동차 주행</legend>
+		<!-- readonly : 작성불가하게 하기 -->
+		<textarea id = "state" readonly>현재 상태</textarea>
+		<img id = "carImg" src = "출발전.png">
+		<!-- onkeyup : key이벤트가 발생되었을때 실행할 문장을 작성하도록 해준다 -->
+		<input type = "text" id = "pwCheck" value = "비밀번호 입력" onkeyup = "activeEnter()">
+		<button id = "start" onclick = "SuperCar.showInput()">시동켜기</button>
+		<button id = "stop" onclick = "SuperCar.engineStop()">시동끄기</button>
+		<button onclick = "history.go(0)">초기화</button>
+	</fieldset>
+</body>
+	<!-- DOM 사용시 항상 HTML 코드 하단에서 사용해야 한다 -->
+	<script type="text/JavaScript" src="objeck_task.js"></script>
+</html>

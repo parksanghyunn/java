@@ -1,0 +1,146 @@
+<!DOCTYPE html>                                            
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+	<!-- Header -->
+	<header id="header">
+		<nav>
+			<ul>
+				<li><a href="#menu">Menu</a></li>
+			</ul>
+		</nav>
+	</header>
+		<!-- Menu -->
+	<nav id="menu">
+		<h2>Menu</h2>
+		<ul class="links">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="generic.html">Ipsum veroeros</a></li>
+			<li><a href="generic.html">Tempus etiam</a></li>
+			<li><a href="generic.html">Consequat dolor</a></li>
+			<li><a href="elements.html">Elements</a></li>
+		</ul>
+		<ul class="actions stacked">
+			<li><a href="join.html" class="button fit primary">sign</a></li>
+			<li><a href="login.html" class="button fit">Log In</a></li>
+		</ul>
+	</nav>
+	<div id="wrapper">
+		<!-- Intro -->
+		<section id="sign" class="wrapper featured style1">
+			<h1>sign up</h1>
+			<h5>저희 사이트에 오신걸 환영합니다.</h5>
+			<div class="inner">
+				<form method="get" action="join.jsp" name = "joinForm">
+					<div class="row gtr-uniform">
+						<div class="col-6 col-12-xsmall" style="margin-left: 30%; margin-right: -150px">
+							<input type="email" name="email" id="email" value=""
+								placeholder="Email" style="width: 70%"/>
+							<p id = "check_text"></p>
+						</div>
+						<ul class="actions">
+							<li style="text-align: center"><input type = "button" value = "중복확인" onclick = "check(form.email.value)"></li>
+						</ul>
+						<div class="col-6 col-12-xsmall" style="margin-left: 30%">
+							<input type="password" name="pw" id="pw" value=""
+								placeholder="password" style="width: 70%"/>
+						</div>
+						<p></p>
+						<div class="col-6 col-12-xsmall" style="margin-left: 30%">
+							<input type="text" name="name" id="name" value="" placeholder="Name" style="margin-top: 30px; width: 70%"/>
+								<p></p>
+						</div>
+						<p></p>
+						<div class="col-6 col-12-small" style=" margin-left: 30%">
+								<label>취미</label>
+								<input type="checkbox" id="movie" name="hobby" value = "영화">
+								<label for="movie">영화</label>
+								<input type="checkbox" id="swim" name="hobby" value = "수영">
+								<label for="swim">수영</label>
+								<input type="checkbox" id="game" name="hobby" value = "게임">
+								<label for="game">게임</label>
+								<input type="checkbox" id="book" name="hobby" value = "독서">
+								<label for="book">독서</label>
+								<input type="checkbox" id="health" name="hobby" value = "헬스">
+								<label for="health">헬스</label>
+						</div>
+					</div>
+					<div class="col-12" style="margin-top: 20px;  width: 40%; margin-left: 30%">
+						<label>이용약관</label>
+						<textarea name="demo-message" id="demo-message" rows="6">
+약관의 규제에 관한 법률
+제6조(일반원칙)
+① 신의성실의 원칙을 위반하여 공정성을 잃은 약관 조항은 무효이다.
+
+② 약관의 내용 중 다음 각 호의 어느 하나에 해당하는 내용을 정하고 있는 조항은 공정성을 잃은 것으로 추정된다.
+
+1. 고객에게 부당하게 불리한 조항
+
+2. 고객이 계약의 거래형태 등 관련된 모든 사정에 비추어 예상하기 어려운 조항
+
+3. 계약의 목적을 달성할 수 없을 정도로 계약에 따르는 본질적 권리를 제한하는 조항
+
+제3조(약관의 작성 및 설명의무 등)
+①사업자는 고객이 약관의 내용을 쉽게 알 수 있도록 한글로 작성하고, 표준화·체계화된 용어를 사용하며, 약관의 중요한 내용을 부호, 색채, 굵고 큰 문자 등으로 명확하게 표시하여 알아보기 쉽게 약관을 작성하여야 한다.
+</textarea>
+					</div>
+					<div class="col-6 col-12-small" style="margin-top: 20px;  margin-left: 30%">
+						<input type="checkbox" id="demo-copy" name="demo-copy"> 
+						<label for="demo-copy"><span style="color: red">[필수]</span> 이용약관
+							확인 및 동의</label>
+					</div>
+					<p id ="check_text"></p>
+					<ul class="actions">
+						<li style="text-align: center; margin: 0 auto"><input type = "button" value = "확인" onclick = "join()" id = "join_ok" disabled="disabled"> <a href="index.html" class="button">취소</a></li>
+					</ul>
+				</form>
+			</div> 
+		</section>
+	<!-- Footer -->
+		<section id="footer" class="wrapper split style2">
+			<div class="inner">
+				<section>
+					<header>
+						<h3>Magna lorem ipsum</h3>
+					</header>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad
+						litora torquent per conubia nostra, per inceptos himenaeos magna
+						fames acturpis egestas amet non lorem amet.</p>
+					<ul class="icons">
+						<li><a href="#" class="icon brands fa-twitter"><span
+								class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands fa-instagram"><span
+								class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands fa-snapchat-ghost"><span
+								class="label">Snapchat</span></a></li>
+						<li><a href="#" class="icon brands fa-github"><span
+								class="label">GitHub</span></a></li>
+					</ul>
+				</section>
+
+			</div>
+			<div class="copyright">
+				<p>&copy; Untitled. All rights reserved. Lorem ipsum dolor sit
+					amet nullam.</p>
+			</div>
+		</section>
+
+	</div>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src ="member.js"></script>
+	<script src = "//code.jquery.com/jquery-3.4.1.min.js"></script>
+
+</body>
+</html>
